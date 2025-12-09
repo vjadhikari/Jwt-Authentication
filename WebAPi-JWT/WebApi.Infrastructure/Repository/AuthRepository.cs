@@ -39,7 +39,7 @@ namespace WebAPi_JWT.WebApi.Infrastructure.Repository
             }
             if (new PasswordHasher<AuthUser>().VerifyHashedPassword(loginUser, userDetail.Password, loginUser.Password) == PasswordVerificationResult.Failed)
             {
-                throw new UnauthorizedAccessException("Invalid credentials");
+                return false;
             }
             return true;
         }
