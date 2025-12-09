@@ -23,7 +23,6 @@ namespace WebAPi_JWT.Controllers
             var users = await _dataAccess.Users.ToListAsync();
             return Ok(users);
         }
-        [HttpPost("Add")]
         [HttpPost("Update")]
         public async Task<IActionResult> Update(User user)
         {
